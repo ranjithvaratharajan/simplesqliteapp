@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ranjith's Reference #6
+      <ion-buttons end>
+        <ion-badge>SQLlite Data : {{itemcount}}</ion-badge>
+      </ion-buttons>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-buttons>
+    <button ion-button full (click)="syncFromWeb()">Show from Web</button>
+    <button ion-button full (click)="syncFromDb()">Show from DB</button>
+    <button ion-button full (click)="clearList()">Clear List</button>
+    <button ion-button full (click)="clearDB()">Clear DB</button>
+  </ion-buttons>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-avatar item-left>
+        <img [src]="item.thumbnailUrl">
+      </ion-avatar>
+      <h2>{{item.title}}</h2>
+    </ion-item>
+  </ion-list>
+</ion-content>
